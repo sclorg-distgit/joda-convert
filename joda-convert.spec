@@ -4,7 +4,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.3
-Release:        5.8%{?dist}
+Release:        5.9%{?dist}
 Summary:        Java library for conversion to and from standard string formats
 License:        ASL 2.0 
 URL:            https://github.com/JodaOrg/joda-convert/
@@ -24,20 +24,20 @@ This package contains the API documentation for %{pkg_name}.
 
 %prep
 %setup -q -n JodaOrg-joda-convert-df6d6c9
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_file : %{pkg_name}
 sed -i s/// LICENSE.txt NOTICE.txt RELEASE-NOTES.txt
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_build
 %{?scl:EOF}
 
 %install
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_install
 %{?scl:EOF}
@@ -49,6 +49,9 @@ set -e -x
 %doc LICENSE.txt NOTICE.txt
 
 %changelog
+* Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.3-5.9
+- maven33 rebuild #2
+
 * Sat Jan 09 2016 Michal Srb <msrb@redhat.com> - 1.3-5.8
 - maven33 rebuild
 
