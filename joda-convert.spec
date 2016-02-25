@@ -4,14 +4,14 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.3
-Release:        5.9%{?dist}
+Release:        5.10%{?dist}
 Summary:        Java library for conversion to and from standard string formats
 License:        ASL 2.0 
 URL:            https://github.com/JodaOrg/joda-convert/
 Source0:        https://github.com/JodaOrg/joda-convert/tarball/v1.3#/joda-convert-1.3.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  %{?scl_prefix_java_common}maven-local
+BuildRequires:  %{?scl_prefix}maven-local
 
 %description
 Java library to enable conversion to and from standard string formats.
@@ -49,6 +49,9 @@ set -e -x
 %doc LICENSE.txt NOTICE.txt
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 1.3-5.10
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.3-5.9
 - maven33 rebuild #2
 
