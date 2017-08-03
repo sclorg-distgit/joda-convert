@@ -3,7 +3,7 @@
 
 Name:           %{?scl_prefix}joda-convert
 Version:        1.8.1
-Release:        5.1%{?dist}
+Release:        5.2%{?dist}
 Summary:        Java library for conversion to and from standard string formats
 License:        ASL 2.0
 URL:            https://github.com/JodaOrg/joda-convert/
@@ -46,6 +46,9 @@ sed -i s/\r// *.txt
 %doc LICENSE.txt NOTICE.txt
 
 %changelog
+* Thu Jun 22 2017 Michael Simacek <msimacek@redhat.com> - 1.8.1-5.2
+- Mass rebuild 2017-06-22
+
 * Wed Jun 21 2017 Java Maintainers <java-maint@redhat.com> - 1.8.1-5.1
 - Automated package import and SCL-ization
 
